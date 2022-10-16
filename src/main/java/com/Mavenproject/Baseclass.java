@@ -41,18 +41,13 @@ public class Baseclass {
 	public static void Clickbutton(WebElement clickon) {
 		clickon.click();
 	}
-	public static void Selectionsvalue(Select selectoption, String selects) {
-		selectoption.selectByValue(selects);
-        
-	}
-	public static void Selectionsindex(WebElement selectbyindexs, int selects) {
-		((Select) selectbyindexs).selectByIndex(selects);
-        
-	}
-	public static void selectvisibletext(Select selectoption, String selects) {
-		selectoption.selectByVisibleText(selects);
+	
+	public static void selectvisibletextfromdrop(WebElement textbox, String input) {
+		Select selectoption=new Select(textbox);
+		selectoption.selectByValue(input);	
 
 	}
+	
 	public static void close() {
 		driver.quit();
 		
